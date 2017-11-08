@@ -1,0 +1,27 @@
+{
+  "name": "Tweet Count",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Get back Twitter's character count.",
+  "homepage_url": "http://fabianschultz.com",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://twitter.com/*",
+        "https://twitter.com/*",
+        "https://www.twitter.com/*",
+        "http://www.twitter.com/*"
+      ],
+      "js": [
+        "vendor/jquery.js",
+        "vendor/twitter-text-1.9.4.min.js",
+        "src/inject.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Tweet Count"
+  },
+  "permissions": ["tabs", "<all_urls>"]
+}
